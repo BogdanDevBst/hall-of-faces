@@ -6,7 +6,7 @@ const RightEye = () => {
   return (
     <>
       <div>
-        <img src={right} alt="right eye" />
+        <img className={styles.rightEye} src={right} alt="right eye" />
       </div>
     </>
   );

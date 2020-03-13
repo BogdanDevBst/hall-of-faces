@@ -5,7 +5,7 @@ import left from "../../images/left.png";
 const LeftEye = () => {
   return (
     <>
-      <img src={left} alt="left eye" />
+      <img className={styles.leftEye} src={left} alt="left eye" />
     </>
   );
 };
