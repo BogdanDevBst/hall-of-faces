@@ -1,10 +1,13 @@
 import React from "react";
 import styles from "./RightEye.module.scss";
+import right from "../../images/right.png";
 
 const RightEye = () => {
   return (
     <>
-      <p>RightEye works</p>
+      <div>
+        <img src={right} alt="right eye" />
+      </div>
     </>
   );
 };
