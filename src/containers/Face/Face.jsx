@@ -1,17 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./Face.module.scss";
-import RightEye from "../../components/RightEye";
-import LeftEye from "../../components/LeftEye";
 import Shea from "../../components/Shea";
+import Button from "../../components/Button";
 
-const Face = () => {
+const Face = props => {
+  const { image } = props;
+  const { eyesLevel, rotateEyes } = useState(true);
+  const spinEyes = eyesLevel ? "" : styles.rotate;
+
   return (
     <>
-      <section className={styles.Face}>
+      <div
+        className={`${styles.face} ${spinEyes}`}
+        onClick={() => rotateEyes(!eyesLevel)}
+      >
+        <img src={image} alt={image} />
         <Shea />
-        <LeftEye />
-        <RightEye />
-      </section>
+        <Button />
+      </div>
     </>
   );
 };
