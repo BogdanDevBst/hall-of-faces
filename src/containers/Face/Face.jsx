@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import styles from "./Face.module.scss";
 import Shea from "../../components/Shea";
-import Button from "../../components/Button";
 
 const Face = props => {
   const { image } = props;
@@ -16,7 +15,6 @@ const Face = props => {
       >
         <img src={image} alt={image} />
         <Shea />
-        <Button />
       </div>
     </>
   );

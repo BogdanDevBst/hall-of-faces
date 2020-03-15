@@ -5,7 +5,9 @@ const Button = props => {
   const { handleClick } = props;
   return (
     <>
-      <button onClick={handleClick}>Rotate</button>
+      <button className={styles.button} onClick={handleClick}>
+        Rotate
+      </button>
     </>
   );
 };
