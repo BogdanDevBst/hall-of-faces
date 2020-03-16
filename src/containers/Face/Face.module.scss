@@ -1,5 +1,12 @@
 .face {
   width: 100vw;
   height: 100vh;
-  display: flex;
+  max-width: 350px;
+  height: auto;
+  position: absolute;
+}
+
+.faceLift {
+  width: 450px;
+  height: auto;
 }

@@ -4,17 +4,15 @@ import Shea from "../../components/Shea";
 
 const Face = props => {
   const { image } = props;
-  const { eyesLevel, rotateEyes } = useState(true);
+  const [eyesLevel, rotateEyes] = useState(true);
   const spinEyes = eyesLevel ? "" : styles.rotate;
-
   return (
     <>
-      <div
-        className={`${styles.face} ${spinEyes}`}
-        onClick={() => rotateEyes(!eyesLevel)}
-      >
-        <img src={image} alt={image} />
-        <Shea />
+      <div onClick={() => rotateEyes(!eyesLevel)}>
+        <img className={styles.faceLift} src={image} alt={image} />
+        <div className={spinEyes}>
+          <Shea />
+        </div>
       </div>
     </>
   );
