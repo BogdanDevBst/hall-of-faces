@@ -1,7 +1,7 @@
 import React from "react";
-import Shea from "./Shea";
+import SheaFace from "./SheaFace";
 
-describe("Shea tests", () => {
+describe("SheaFace tests", () => {
   let component;
 
   beforeEach(() => {

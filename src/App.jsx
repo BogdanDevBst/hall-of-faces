@@ -1,19 +1,32 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
-import Face from "./containers/Face";
-import FaceImg from "./images/shea.png";
+import Dashboard from "./containers/Dashboard";
 
-const App = () => {
-  const numberOfSheas = 1;
-  const faceArray = [];
-  for (let i = 0; i < numberOfSheas; i++) {
-    faceArray.push(<Face image={FaceImg} />);
-  }
+function App() {
+  let fetchedNum;
+
+  const [randomNum, changeNumber] = useState(0);
+
+  useEffect(() => {
+    fetch(
+      "https://www.random.org/integers/?num=1&min=1&max=9&col=1&base=10&format=plain&rnd=new"
+    )
+      .then(result => result.json())
+      .then(result => {
+        fetchedNum = result;
+        updateNum();
+        console.log(result);
+      })
+      .catch(error => console.log(error));
+  }, []);
+
+  const updateNum = () => changeNumber(fetchedNum);
+
   return (
     <>
-      <div>{faceArray}</div>
+      <Dashboard number={randomNum} />
     </>
   );
-};
+}
 
 export default App;
